@@ -1,27 +1,38 @@
 class SmartCalculator {
-  constructor(initialValue) {
-    // your implementation
-  }
+    constructor(initialValue) {
+        this.value = initialValue;
+    }
 
-  add(number) {
-    // your implementation
-  }
-  
-  subtract(number) {
-    // your implementation
-  }
+    add(number) {
+        this.value = this.value + '+' + number;
+        return this;
+    }
 
-  multiply(number) {
-    // your implementation
-  }
+    subtract(number) {
+        this.value = this.value + '-' + number;
+        return this;
+    }
 
-  devide(number) {
-    // your implementation
-  }
+    multiply(number) {
+        this.value = this.value + '*' + number;
+        return this;
+    }
 
-  pow(number) {
-    // your implementation
-  }
+    devide(number) {
+        this.value = this.value + '/' + number;
+        return this;
+    }
+
+    pow(number) {
+        this.value = this.value + '**' + number;
+        return this;
+    }
+    // override the default method (which is used when comparing objects)
+    // by its own method (the name should remain the default)
+    toString() {
+       var result = eval(this.value);
+        return result;
+    }
 }
 
 module.exports = SmartCalculator;
